@@ -1,0 +1,24 @@
+Microsoft Windows [Version 6.1.7600]
+Copyright (c) 2009 Microsoft Corporation.  All rights reserved.
+
+C:\Users\domainroot>winrm quickconfig
+WinRM already is set up to receive requests on this machine.
+WinRM is not set up to allow remote access to this machine for management.
+The following changes must be made:
+
+Enable the WinRM firewall exception.
+
+Make these changes [y/n]? y
+
+WinRM has been updated for remote management.
+
+WinRM firewall exception enabled.
+
+C:\Users\domainroot>WECUTIL QC
+The service startup mode will be changed to Delay-Start. Would you like to proce
+ed ( Y- yes or N- no)?Y
+Windows Event Collector service was configured successfully.
+
+C:\Users\domainroot>re
+
+restart winrm service
