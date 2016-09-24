@@ -1,0 +1,17 @@
+Comcast VPN Server details:-
+
+VPN Local ip:- 192.168.30.10
+
+VPN Public IP:- 59.160.207.72
+
+Server Local Ip:- 192.168.30.58
+
+--------------------------------
+VPN Access group:- 
+
+Telxsi\vpnaccess
+Telxsi\ccvpnremoteaccess
+
+----------------------------------
+
+
