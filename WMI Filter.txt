@@ -1,0 +1,61 @@
+WMI Filter
+
+
+DESKTOPS
+ANY WINDOWS DESKTOP OS
+
+    Any Windows Desktop OS – Version 1
+    select * from Win32_OperatingSystem WHERE ProductType = "1"
+    Any Windows Desktop OS – Version 2 (better for Win7 sometimes)
+    select * from Win32_OperatingSystem WHERE (ProductType <> "2") AND (ProductType <> "3")
+    Any Windows Desktop OS – 32-bit
+    select * from Win32_OperatingSystem WHERE ProductType = "1" AND NOT OSArchitecture = "64-bit"
+    Any Windows Desktop OS – 64-bit
+    select * from Win32_OperatingSystem WHERE ProductType = "1" AND OSArchitecture = "64-bit"
+
+WINDOWS XP
+
+    Windows XP
+    select * from Win32_OperatingSystem WHERE (Version like "5.1%" or Version like "5.2%") AND ProductType="1"
+    Windows XP – 32-bit
+    select * from Win32_OperatingSystem WHERE (Version like "5.1%" or Version like "5.2%") AND ProductType="1" AND NOT OSArchitecture = "64-bit"
+    Windows XP – 64-bit
+    select * from Win32_OperatingSystem WHERE (Version like "5.1%" or Version like "5.2%") AND ProductType="1" AND OSArchitecture = "64-bit"
+
+WINDOWS VISTA
+
+    Windows Vista
+    select * from Win32_OperatingSystem WHERE Version like "6.0%" AND ProductType="1"
+    Windows Vista – 32-bit
+    select * from Win32_OperatingSystem WHERE Version like "6.0%" AND ProductType="1" AND NOT OSArchitecture = "64-bit"
+    Windows Vista – 64-bit
+    select * from Win32_OperatingSystem WHERE Version like "6.0%" AND ProductType="1" AND OSArchitecture = "64-bit"
+
+WINDOWS 7
+
+    Windows 7
+    select * from Win32_OperatingSystem WHERE Version like "6.1%" AND ProductType="1"
+    Windows 7 – 32-bit
+    select * from Win32_OperatingSystem WHERE Version like "6.1%" AND ProductType="1" AND NOT OSArchitecture = "64-bit"
+    Windows 7 – 64-bit
+    select * from Win32_OperatingSystem WHERE Version like "6.1%" AND ProductType="1" AND OSArchitecture = "64-bit"
+
+WINDOWS 8
+
+    Windows 8
+    select * from Win32_OperatingSystem WHERE Version like "6.2%" AND ProductType="1"
+    Windows 8 – 32-bit
+    select * from Win32_OperatingSystem WHERE Version like "6.2%" AND ProductType="1" AND NOT OSArchitecture = "64-bit"
+    Windows 8 – 64-bit
+    select * from Win32_OperatingSystem WHERE Version like "6.2%" AND ProductType="1" AND OSArchitecture = "64-bit"
+
+WINDOWS 8.1
+
+    Windows 8.1
+    select * from Win32_OperatingSystem WHERE Version like "6.3%" AND ProductType="1"
+    Windows 8.1 – 32-bit
+    select * from Win32_OperatingSystem WHERE Version like "6.3%" AND ProductType="1" AND NOT OSArchitecture = "64-bit"
+    Windows 8.1 – 64-bit
+    select * from Win32_OperatingSystem WHERE Version like "6.3%" AND ProductType="1" AND OSArchitecture = "64-bit"
+
+ 

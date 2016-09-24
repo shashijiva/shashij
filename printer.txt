@@ -1,0 +1,85 @@
+'=========================================================================
+' MAP PRINTERS BASED ON OU
+'
+' AUTHOR:  IT Team
+' COMPANY: Tata Elxsi
+' DATE:    01/10/2014
+'=========================================================================
+Set objSysInfo = CreateObject("ADSystemInfo")
+strName = objSysInfo.UserName
+
+arrUserName = Split(strName, ",")
+arrOU = Split(arrUserName(1), "=")
+strUserOU = arrOU(1)
+
+Set objNetwork = CreateObject("WScript.Network")
+
+'=========================================================================
+'STEP 1 - Remove any NETWORK printers (NOT Local Printers)
+'=========================================================================
+
+Set WshNetwork = WScript.CreateObject("WScript.Network")
+Set Printers = WshNetwork.EnumPrinterConnections
+
+For i = 0 to Printers.Count - 1 Step 2
+
+    If Left(ucase(Printers.Item(i+1)),2) = "\\" Then
+        WSHNetwork.RemovePrinterConnection Printers.Item(i+1)
+    End IF
+Next
+
+'=========================================================================
+'STEP 2 - Connect Printers based on COMPUTER OU membership
+'=========================================================================
+
+Select Case strUserOU
+    Case "BTP I"
+        objNetwork.AddWindowsPrinterConnection "\\10.1.1.15\btp_ff_mmc"
+        objNetwork.SetDefaultPrinter "\\10.1.1.15\btp_ff_mmc"
+    Case "BTP II"
+        objNetwork.AddWindowsPrinterConnection "\\10.1.1.15\btp_sf_mmc"        
+        objNetwork.SetDefaultPrinter "\\10.1.1.15\btp_sf_mmc"
+    Case "CEDAR 0"
+        objNetwork.AddWindowsPrinterConnection "\\10.1.1.15\cgf_ph1_mmc"        
+        objNetwork.SetDefaultPrinter "\\10.1.1.15\cgf_ph1_mmc"
+    Case "JLR"
+        objNetwork.AddWindowsPrinterConnection "\\10.1.1.15\jlr_mmc"        
+        objNetwork.SetDefaultPrinter "\\10.1.1.15\jlr_mmc"
+    Case "CEDAR 1"
+        objNetwork.AddWindowsPrinterConnection "\\10.1.1.15\cff_ph1_mmc"        
+        objNetwork.SetDefaultPrinter "\\10.1.1.15\cff_ph1_mmc"
+    Case "CEDAR2"
+        objNetwork.AddWindowsPrinterConnection "\\10.1.1.15\csf_all_mmc"        
+        objNetwork.SetDefaultPrinter "\\10.1.1.15\csf_all_mmc"
+    Case "TOUCH-DOWN 0"
+        objNetwork.AddWindowsPrinterConnection "\\10.1.1.15\touchdown_si_mmc"        
+        objNetwork.SetDefaultPrinter "\\10.1.1.15\touchdown_si_mmc"
+    Case "CEDAR3"
+        objNetwork.AddWindowsPrinterConnection "\\10.1.1.15\ctf_ph1 & ph2_mmc"        
+        objNetwork.SetDefaultPrinter "\\10.1.1.15\ctf_ph1 & ph2_mmc"
+    Case "PALM 0"
+        objNetwork.AddWindowsPrinterConnection "\\10.1.1.15\palm_mmc"
+        objNetwork.SetDefaultPrinter "\\10.1.1.15\palm_mmc"
+    Case "BlackBerry"
+        objNetwork.AddWindowsPrinterConnection "\\10.1.1.15\bgf_52_mmc"
+	objNetwork.AddWindowsPrinterConnection "\\10.1.1.15\bff_27_mmc"
+	objNetwork.AddWindowsPrinterConnection "\\10.1.1.15\bgf_28_mmc"
+    Case "FINANCE GROUP"
+        objNetwork.AddWindowsPrinterConnection "\\10.1.1.15\Finance_Ecalyptus_MMC"
+	objNetwork.SetDefaultPrinter "\\10.1.1.15\Finance_Ecalyptus_MMC"
+    Case "MAPLE 0"
+        objNetwork.AddWindowsPrinterConnection "\\10.1.1.15\Maple_GF_MMC"
+	objNetwork.AddWindowsPrinterConnection "\10.1.1.15\Marketing_Brothers_ALL"
+	objNetwork.SetDefaultPrinter "\\10.1.1.15\Maple_GF_MMC"
+    Case "MAPLE1"
+        objNetwork.AddWindowsPrinterConnection "\\10.1.1.15\Maple_FF_MMC"
+    	objNetwork.SetDefaultPrinter "\\10.1.1.15\Maple_FF_MMC"
+    Case "Marketing"
+        objNetwork.AddWindowsPrinterConnection "\\10.1.1.15\cgf_ph1_mmc"
+	objNetwork.AddWindowsPrinterConnection "\10.1.1.15\Marketing_Brothers_ALL"
+    Case "Blackberry-FF"
+        objNetwork.AddWindowsPrinterConnection "\\10.1.1.15\bff_40_mmc"
+	objNetwork.AddWindowsPrinterConnection "\\10.1.1.15\bff_27_mmc"
+	
+        
+End Select
