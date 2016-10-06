@@ -1,0 +1,17 @@
+Upgrade ePO from 5.1.0 to ePO 5.3.1 or 5.3.2
+----------------------------------------------
+1. Take the backup for ePO and the database using the article: 
+https://kc.mcafee.com/corporate/index?page=content&id=kb66616 and 
+https://kc.mcafee.com/corporate/index?page=content&id=kb52126 (Save this backup on remote server) 
+
+2. Check the article for supported products with ePO 5.3. Make sure that McAfee Products that you are using are on same version which are supported with ePO 5.3 if not please upgrade them first.
+https://kc.mcafee.com/corporate/index?page=content&id=KB82836
+
+3. Follow the checklist before starting an upgrade using the article:   
+https://kc.mcafee.com/corporate/index?page=content&id=KB76739 
+
+4. Download ePO 5.3 package from the McAfee download website using the grant number: https://secure.mcafee.com/apps/downloads/my-products/login.aspx
+
+5. Extract the package, inside Upgrade compatibility folder find the tool UpgradeCompatibility (type application), Run the Upgradecompatibility tool  
+
+6. Run the ePO 5.3 setup.
