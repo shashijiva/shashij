@@ -1,0 +1,45 @@
+ 178  ls
+  179  cd shashij/
+  180  ls
+  181  touch test1
+  182  git add test1
+  183  git commit -m "test" test1 git@github.com:shashijiva/shashij.git
+  184  git commit -m "test" test1
+  185  history | grep git push
+  186  git push --set-upstream origin newbranch
+  187  git commit -m "first commit"
+  188  git push
+  189  cd ..
+  190  cd ..
+  191  ls
+  192  cd test
+  193  git config --list
+  194  ls
+  195  git clone git@github.com:Kranthi4u7/audit.git
+  196  ls
+  197  cd shashij/
+  198  git config --global --edit
+  199  history
+  200  ssh-keygen -t rsa -C "shashij@tataelxsi.co.in"
+  201  ls
+  202  cd ..
+  203  ls
+  204  git clone git@github.com:shashijiva/shashij.git
+  205  cd shashij
+  206  ls
+  207  git push test1 git@github.com:shashijiva/shashij.git
+  208  git pull
+  209  git push test1 git@github.com:shashijiva/shashij.git
+  210  ls
+  211  git add .
+  212  git push test1 git@github.com:shashijiva/shashij.git
+  213  git push origin master
+  214  ls
+  215  touch test15
+  216  git push origin master
+  217  git add test15
+  218  git commit -m "testing" test15
+  219  git push origin master
+  220  git push origin master
+  221  git commit -m "testing" test15
+  222  history
