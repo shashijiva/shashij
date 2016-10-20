@@ -1,0 +1,33 @@
+Create new restricted rule:
+
+1. first create new rule through > third icon controller papameter maintanance process
+
+2. Door Accessibility > Add new rule
+
+3. Add restective door along with general door and allo access
+
+4. Select rest all rules and stop access that particular door access 
+
+5. save and exit
+
+6. click on controller menu and click on controller data ReSend
+
+7. Select respective controller left window 
+
+8. select door auto release,door open timeout,door release time,door work mode, group data, timer data, timezone data, timezone table data
+
+9. Begin Send and complete exit
+
+10.  click on second icon
+
+11. card & staff menu > card resend to controller
+
+12. select Delete all card before resend
+
+13. select respective controller left window 
+
+14. begin send
+
+15. give respective emp access to new rule and check
+
+16. mOTOROLA ACCESS TO BE SENT TO ONLY CONTROLER 07 AND SLAVE02
